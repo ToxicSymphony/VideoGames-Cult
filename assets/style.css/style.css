@@ -1,0 +1,20 @@
+.banner{
+   background-image: url("../img/cultofthelamb.jpg");
+   padding: 40% 25% 15% 28%;
+   background-size: 100%;
+   background-repeat: no-repeat;
+   width: 100%;
+   background-position: top center;
+   position: relative;
+   z-index: 1;
+}
+
+.banner::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
