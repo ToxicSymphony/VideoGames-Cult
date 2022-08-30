@@ -72,7 +72,7 @@
             <h1>Most Popular</h1>
             <div
             id="carouselExampleFade"
-            class="carousel slide carousel-fade m-5"
+            class="carousel slide carousel-fade p-5"
             data-bs-ride="carousel"
           >
             <div class="carousel-inner">
@@ -145,10 +145,33 @@
           </div>
           <div class="col-12 col-md-4 align-self-center">
             <h3 class="text-light">Welcome</h3>
-            <P class="text-light">Hi gamer, you are in VideoGames Cult, the best videogames store of the entire internet! Please join into our cult to see the products we offer and maybe ...  make some money sacrifices</P>
-            <button id="botonsito" class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="bi bi-box-arrow-in-right me-3 "></i>Sign Up</button>
-          </div>
-        </div>
+            <p class="text-light">Hi gamer, you are in VideoGames Cult, the best videogames store of the entire internet! Please join into our cult to see the products we offer and maybe ...  make some money sacrifices</p>
+            <button id="botonsito" class="btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="bi bi-box-arrow-in-right me-3"></i>Sign Up</button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+              <div class="offcanvas-header bg-dark text-light">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Enter to our cult</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body text-light bg-dark ">
+                <div>
+                  <form action="">
+                    <div class="mb-3">
+                      <label class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="correo">
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn btn-danger" id="botonRegistro">Sign up</button>
+                  </form>
+                </div>
+              
+              </div>
+            </div>
+          </section>
+          
      
       </section>
 
@@ -158,8 +181,8 @@
 
 
 
-
-    <script src="./src/controllers/controladores.js"></script>
+    <script src="./src/services/conexionFirebase.js" type="module"></script>
+    <script src="./src/services/registro.js" type="module"></script>
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

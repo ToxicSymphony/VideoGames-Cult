@@ -1,9 +1,18 @@
-let carrito = JSON.parse(localStorage.getItem("carrito"));
+let carrito = JSON.parse(sessionStorage.getItem("carrito"));
+
+let totalCompra = document.getElementById("totalCompra")
+
+let limpiar = document.getElementById("limpiar")
 
 let factura = document.getElementById("factura");
 
 
 if (carrito == null) {
+
+  totalCompra.textContent="$0"
+
+  limpiar.classList.add("d-none")
+
   let fila = document.createElement("div");
   fila.classList.add("row", "my-5", "justify-content-center");
 
@@ -79,6 +88,16 @@ if (carrito == null) {
     console.log(subtotalCalculado)
 
     subtotal.textContent = `$${subtotalCalculado}`
+
+    
+    limpiar.addEventListener("click", function(evento){
+      sessionStorage.removeItem("carrito")
+      window.location.href="../views/carrito.html"
+      
+      totalCompra.textContent="$0"
+  
+    })
+
     // if (producto.nombre == producto.nombre) {
 
     //     subtotal = banana*producto.cantidad
@@ -105,9 +124,9 @@ if (carrito == null) {
 }
 
 
-if (JSON.parse(localStorage.getItem("carrito")) != null) {
+if (JSON.parse(sessionStorage.getItem("carrito")) != null) {
 
-    carrito=JSON.parse(localStorage.getItem("carrito"))
+    carrito=JSON.parse(sessionStorage.getItem("carrito"))
 
     let pildora = document.getElementById("pildora");
     pildora.textContent=carrito.length
@@ -115,3 +134,4 @@ if (JSON.parse(localStorage.getItem("carrito")) != null) {
 } else {
     carrito=[]
 }
+

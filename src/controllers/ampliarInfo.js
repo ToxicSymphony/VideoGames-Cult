@@ -16,13 +16,13 @@ contenedorProducto.addEventListener("click", function (evento) {
         // contenedorProducto.descripcion = (evento.target.parentElement.querySelector("p").textContent)
        
 
-       informacionProducto.nombre = (evento.target.parentElement.parentElement.querySelector(".col-md-8").querySelector("h1").textContent)
+        informacionProducto.nombre = (evento.target.parentElement.parentElement.querySelector(".col-md-8").querySelector("h1").textContent)
         informacionProducto.precio = (evento.target.parentElement.parentElement.querySelector(".col-md-8").querySelector("h2").textContent)
         informacionProducto.popularidad = (evento.target.parentElement.parentElement.querySelector(".col-md-8").querySelector("h3").textContent)
         informacionProducto.descripcion = (evento.target.parentElement.parentElement.querySelector(".col-md-8").querySelector("p").textContent)
         informacionProducto.foto = (evento.target.parentElement.parentElement.querySelector(".col-md-4").querySelector("img").src)
 
-        localStorage.setItem("producto", JSON.stringify(informacionProducto))
+        sessionStorage.setItem("producto", JSON.stringify(informacionProducto))
 
         console.log(informacionProducto)
 

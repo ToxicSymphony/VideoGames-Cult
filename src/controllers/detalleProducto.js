@@ -1,12 +1,12 @@
-let producto = JSON.parse(localStorage.getItem("producto"));
+let producto = JSON.parse(sessionStorage.getItem("producto"));
 
-let carritoMemoria = JSON.parse(localStorage.getItem("carrito"))
+let carritoMemoria = JSON.parse(sessionStorage.getItem("carrito"))
 
 let carrito
 
-if (JSON.parse(localStorage.getItem("carrito")) != null) {
+if (JSON.parse(sessionStorage.getItem("carrito")) != null) {
 
-    carrito=JSON.parse(localStorage.getItem("carrito"))
+    carrito=JSON.parse(sessionStorage.getItem("carrito"))
 
     let pildora = document.getElementById("pildora");
     pildora.textContent=carrito.length
@@ -54,7 +54,7 @@ agregarProducto.addEventListener("click", function (evento) {
   carrito.push(producto);
   console.log(carrito);
 
-  localStorage.setItem("carrito", JSON.stringify(carrito))
+  sessionStorage.setItem("carrito", JSON.stringify(carrito))
 
   let cantidadCarrito = carrito.length;
 
