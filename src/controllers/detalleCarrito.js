@@ -91,9 +91,12 @@ if (carrito == null) {
     let subtotalCalculado = producto.precio.split("$")[1]*producto.cantidad
     console.log(subtotalCalculado)
 
-    subtotal.textContent = `$${subtotalCalculado}`
+    let text = subtotalCalculado.toLocaleString("en-US", {style:"currency", currency:"USD"});
+    subtotal.textContent = `${text}`
 
     total = total+subtotalCalculado
+
+    
 
     
     limpiar.addEventListener("click", function(evento){
@@ -128,7 +131,9 @@ if (carrito == null) {
 
   });
 
-  totalCompra.textContent = `$${total}`
+  let text = total.toLocaleString("en-US", {style:"currency", currency:"USD"});
+
+  totalCompra.textContent = `${text}`
 
   let conversor = document.getElementById("conversor")
   conversor.classList.add("btn", "btn-danger", "text-light")
@@ -136,19 +141,25 @@ if (carrito == null) {
 
   conversor.addEventListener("click",function(evento){
 
+    
+
     let usd = 4415
     let operacion = 0
 
     operacion = total * (usd/1)
 
-    totalCompra.textContent = `$${operacion}`
+    let text = operacion.toLocaleString("de-De");
+
+    totalCompra.textContent = `$${text}`
 
     conversor.textContent = "Convert to USD"
 
     if (bandera) {
 
+      let text = total.toLocaleString("en-US", {style:"currency", currency:"USD"});
+
       conversor.addEventListener("click",function(){
-        totalCompra.textContent = `$${total}`
+        totalCompra.textContent = `${text}`
         conversor.textContent = "Convert to COP"
       })
 
@@ -156,7 +167,8 @@ if (carrito == null) {
       
     } else {
       conversor.addEventListener("click",function(){
-        totalCompra.textContent = `$${operacion}`
+        let text = operacion.toLocaleString("de-De");
+        totalCompra.textContent = `$${text}`
         conversor.textContent = "Convert to USD"
       })
 

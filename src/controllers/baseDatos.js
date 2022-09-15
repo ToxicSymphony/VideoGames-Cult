@@ -236,45 +236,6 @@ productos.forEach(function (producto) {
     }
   })
 
-
-  // let adventure = document.getElementById("adventure")
-  // if (producto.categoria != "aventura") {
-
-  //   adventure.addEventListener("click",function(){
-  //     tarjeta.classList.add("d-none")
-  //   })
-    
-  // }
-  // let adventure = document.getElementById("adventure")
-  // if (producto.categoria != "aventura") {
-
-  //   adventure.addEventListener("click",function(){
-  //     tarjeta.classList.add("d-none")
-  //   })
-    
-  // }
-  // let adventure = document.getElementById("adventure")
-  // if (producto.categoria != "aventura") {
-
-  //   adventure.addEventListener("click",function(){
-  //     tarjeta.classList.add("d-none")
-  //   })
-    
-  // }
-  // let adventure = document.getElementById("adventure")
-  // if (producto.categoria != "aventura") {
-
-  //   adventure.addEventListener("click",function(){
-  //     tarjeta.classList.add("d-none")
-  //   })
-    
-  // }
-  
-
-  
-
-
-
   if (producto.nombre == "MultiVersus") {
     precio.textContent = producto.precio
   
