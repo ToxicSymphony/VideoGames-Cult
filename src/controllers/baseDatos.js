@@ -7,7 +7,7 @@ let productos = [
     ],
     popularidad: 4,
     descripcion: "Rise on every front: Dogfight over the Pacific, airdrop over France, defend Stalingrad with a sniper’s precision and blast through advancing forces in North Africa. The Call of Duty® franchise returns with Call of Duty®: Vanguard, developed by Sledgehammer Games, where players will be immersed in visceral WWII combat on an unprecedented global scale",
-    categoria: "Shooter",
+    categoria: "shooter",
   },
   {
     nombre: "Far Cry 6",
@@ -17,7 +17,7 @@ let productos = [
     ],
     popularidad: 3,
     descripcion: "Welcome to Yara, a tropical paradise frozen in time. As the dictator of Yara, Antón Castillo is intent on restoring his nation back to its former glory by any means, with his son, Diego, following in his bloody footsteps. Their oppressive rule has ignited a revolution",
-    categoria: "Aventura",
+    categoria: "aventura",
   },
   {
     nombre: "Fifa23",
@@ -37,7 +37,7 @@ let productos = [
     ],
     popularidad: 4,
     descripcion: "Join Kratos and Atreus on a mythic journey for answers before Ragnarök arrives. Together, father and son must put everything on the line as they journey to each of the Nine Realms.\nThroughout stunning mythological landscapes, they’ll face fearsome enemies – from Norse gods to wild beasts – as they prepare for the showdown of their lives",
-    categoria: "Accion"
+    categoria: "accion"
   },
   {
     nombre: "Hitman 3",
@@ -47,11 +47,11 @@ let productos = [
     ],
     popularidad: 2,
     descripcion: "Death Awaits. Agent 47 returns in HITMAN 3, the dramatic conclusion to the World of Assassination trilogy..",
-    categoria: "Accion"
+    categoria: "accion"
   },
   {
     nombre: "MultiVersus",
-    precio: "Free",
+    precio: "free",
     fotos: [
       "https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/Multiversus.webp?alt=media&token=1b5f1e6e-6254-441b-b049-89f28fa2c641","https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/Multiversus2.webp.jpg?alt=media&token=ccc66870-6cd0-4dab-8a07-b91fe23669ea"
     ],
@@ -68,7 +68,7 @@ let productos = [
     ],
     popularidad: 1,
     descripcion: "Dive into explosive 5v5 gameplay, high-stakes competition, and thrilling PvP team battles. Tom Clancy's Rainbow Six® Siege features an ever-expanding experience with limitless opportunities to perfect your strategy and help lead your team to victory.. ",
-    categoria: "Shooter"
+    categoria: "shooter"
   },
   {
     nombre: "The Last Of uS",
@@ -76,7 +76,7 @@ let productos = [
     fotos: ["https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/TheLastOfUs.webp?alt=media&token=addc0a97-f378-40a4-a6ab-3675d2d1aee8","https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/TheLastOfUs-2.webp.jpg?alt=media&token=d56124b1-3373-4d4d-8279-300c45357868"],
     popularidad: 5,
     descripcion: "Five years after their dangerous journey across the post-pandemic United States, Ellie and Joel have settled down in Jackson, Wyoming. Living amongst a thriving community of survivors has allowed them peace and stability, despite the constant threat of the infected and other, more desperate survivors. When a violent event disrupts that peace, Ellie embarks on a relentless journey to carry out justice and find closure. As she hunts those responsible one by one, she is confronted with the devastating physical and emotional repercussions of her actions.",
-    categoria: "Accion"
+    categoria: "accion"
   },
   {
     nombre: "Assasins Creed Valhalla",
@@ -84,7 +84,7 @@ let productos = [
     fotos: ["https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/Valhalla.webp?alt=media&token=5bde4d97-bee6-4a0b-b8d7-8d4577965fba","https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/Valhalla2.webp?alt=media&token=00a57739-c190-4acb-a7d4-84c5846bde06",],
     popularidad: 4,
     descripcion: "In Assassin’s Creed® Valhalla, you are Eivor, a fierce Viking warrior raised on tales of battle and glory. Explore a mysterious and beautiful open world set against the brutal backdrop of England’s Dark Ages. Raid your enemies, grow your settlement, and build your political power in the quest to earn a place among the gods in Valhalla..",
-    categoria: "Accion"
+    categoria: "accion"
   },
   {
     nombre: "BattleField",
@@ -93,7 +93,7 @@ let productos = [
     popularidad: 3,
     descripcion: `
     Battlefield™ 2042 is a first-person shooter that marks the return to the iconic all-out warfare of the franchise. In a near-future world transformed by disorder, adapt and overcome dynamically-changing battlegrounds with the help of your squad and a cutting-edge arsenal.`,
-    categoria: "Shooter"
+    categoria: "shooter"
   },
 ];
 
@@ -173,24 +173,114 @@ productos.forEach(function (producto) {
   descripcion.classList.add("text-light","d-none")
   descripcion.textContent=producto.descripcion
 
-  if (JSON.parse(sessionStorage.getItem("carrito")) != null) {
+  let all = document.getElementById("all")
+  all.addEventListener("click", function(){
+    tarjeta.classList.remove("d-none")
+  })
 
-    carrito=JSON.parse(sessionStorage.getItem("carrito"))
 
-    let pildora = document.getElementById("pildora");
-    pildora.textContent=carrito.length
+  let adventure = document.getElementById("adventure")
+  adventure.addEventListener("click",function(){
+    if (producto.categoria != "aventura") {
+
+   
+      tarjeta.classList.add("d-none")
     
-} else {
-    carrito=[]
-}
+    
+    } else {
 
-if (producto.nombre == "MultiVersus") {
-  precio.textContent = producto.precio
+    tarjeta.classList.remove("d-none")
+
+    }
+  })
+
+  let action = document.getElementById("action")
+  action.addEventListener("click",function(){
+    if (producto.categoria != "accion") {
+
+   
+      tarjeta.classList.add("d-none")
+    
+    
+    } else {
+
+    tarjeta.classList.remove("d-none")
+
+    }
+  })
+
+  let fight = document.getElementById("fight")
+  fight.addEventListener("click",function(){
+    if (producto.categoria != "lucha") {
+      tarjeta.classList.add("d-none")
+    } else {
+      tarjeta.classList.remove("d-none")
+    }
+  })
+
+  let shooter = document.getElementById("shooter")
+  shooter.addEventListener("click",function(){
+    if (producto.categoria != "shooter") {
+      tarjeta.classList.add("d-none")
+    } else {
+      tarjeta.classList.remove("d-none")
+    }
+  })
+
+  let sport = document.getElementById("sport")
+  sport.addEventListener("click",function(){
+    if (producto.categoria != "sports") {
+      tarjeta.classList.add("d-none")
+    } else {
+      tarjeta.classList.remove("d-none")
+    }
+  })
+
+
+  // let adventure = document.getElementById("adventure")
+  // if (producto.categoria != "aventura") {
+
+  //   adventure.addEventListener("click",function(){
+  //     tarjeta.classList.add("d-none")
+  //   })
+    
+  // }
+  // let adventure = document.getElementById("adventure")
+  // if (producto.categoria != "aventura") {
+
+  //   adventure.addEventListener("click",function(){
+  //     tarjeta.classList.add("d-none")
+  //   })
+    
+  // }
+  // let adventure = document.getElementById("adventure")
+  // if (producto.categoria != "aventura") {
+
+  //   adventure.addEventListener("click",function(){
+  //     tarjeta.classList.add("d-none")
+  //   })
+    
+  // }
+  // let adventure = document.getElementById("adventure")
+  // if (producto.categoria != "aventura") {
+
+  //   adventure.addEventListener("click",function(){
+  //     tarjeta.classList.add("d-none")
+  //   })
+    
+  // }
   
-}
+
+  
 
 
- 
+
+  if (producto.nombre == "MultiVersus") {
+    precio.textContent = producto.precio
+  
+  }
+
+
   tarjeta.appendChild(contenedor)
   contenedor.appendChild(columnaImagen)
   contenedor.appendChild(columnaTexto)
@@ -208,3 +298,14 @@ if (producto.nombre == "MultiVersus") {
 
 });
 
+
+if (JSON.parse(sessionStorage.getItem("carrito")) != null) {
+
+  carrito=JSON.parse(sessionStorage.getItem("carrito"))
+
+  let pildora = document.getElementById("pildora");
+  pildora.textContent=carrito.length
+  
+} else {
+  carrito=[]
+}
