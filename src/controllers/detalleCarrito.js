@@ -128,9 +128,44 @@ if (carrito == null) {
 
   });
 
-  totalCompra.textContent = total
+  totalCompra.textContent = `$${total}`
 
-  
+  let conversor = document.getElementById("conversor")
+  conversor.classList.add("btn", "btn-danger", "text-light")
+  conversor.textContent = "Convert to COP"
+
+  conversor.addEventListener("click",function(evento){
+
+    let usd = 4415
+    let operacion = 0
+
+    operacion = total * (usd/1)
+
+    totalCompra.textContent = `$${operacion}`
+
+    conversor.textContent = "Convert to USD"
+
+    if (bandera) {
+
+      conversor.addEventListener("click",function(){
+        totalCompra.textContent = `$${total}`
+        conversor.textContent = "Convert to COP"
+      })
+
+      bandera = !bandera
+      
+    } else {
+      conversor.addEventListener("click",function(){
+        totalCompra.textContent = `$${operacion}`
+        conversor.textContent = "Convert to USD"
+      })
+
+      bandera = !bandera
+    }
+
+  })
+
+
 }
 
 
