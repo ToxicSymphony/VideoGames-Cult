@@ -6,6 +6,10 @@ let limpiar = document.getElementById("limpiar")
 
 let factura = document.getElementById("factura");
 
+let total = 0
+
+let bandera = true
+
 
 if (carrito == null) {
 
@@ -89,6 +93,8 @@ if (carrito == null) {
 
     subtotal.textContent = `$${subtotalCalculado}`
 
+    total = total+subtotalCalculado
+
     
     limpiar.addEventListener("click", function(evento){
       sessionStorage.removeItem("carrito")
@@ -121,7 +127,12 @@ if (carrito == null) {
     factura.appendChild(fila)
 
   });
+
+  totalCompra.textContent = total
+
+  
 }
+
 
 
 if (JSON.parse(sessionStorage.getItem("carrito")) != null) {
