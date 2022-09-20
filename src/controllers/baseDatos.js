@@ -3,7 +3,7 @@ let productos = [
     nombre: "Call Of Duty Vanguard",
     precio: 60,
     fotos: [
-        "https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/CallOfDuty.webp?alt=media&      token=91b65962-e0b6-412d-8056-f31c65e703b7","https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/CallOfDuty2.webp?alt=media&token=924f4203-ba48-42e6-b4b9-6a530dade4e3"
+        "https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/CallOfDuty.webp?alt=media&token=91b65962-e0b6-412d-8056-f31c65e703b7","https://firebasestorage.googleapis.com/v0/b/armasborderlandsjpbs.appspot.com/o/CallOfDuty2.webp?alt=media&token=924f4203-ba48-42e6-b4b9-6a530dade4e3"
     ],
     popularidad: 4,
     descripcion: "Rise on every front: Dogfight over the Pacific, airdrop over France, defend Stalingrad with a sniper’s precision and blast through advancing forces in North Africa. The Call of Duty® franchise returns with Call of Duty®: Vanguard, developed by Sledgehammer Games, where players will be immersed in visceral WWII combat on an unprecedented global scale",
