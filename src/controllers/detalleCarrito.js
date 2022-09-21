@@ -6,6 +6,8 @@ let limpiar = document.getElementById("limpiar")
 
 let factura = document.getElementById("factura");
 
+let columnaBotones2 = document.getElementById("columnaBotones2")
+
 let total = 0
 
 let bandera = true
@@ -16,6 +18,8 @@ if (carrito == null) {
   totalCompra.textContent="$0"
 
   limpiar.classList.add("d-none")
+
+  columnaBotones2.classList.add("d-none")
 
   let fila = document.createElement("div");
   fila.classList.add("row", "my-5", "justify-content-center");
@@ -32,7 +36,7 @@ if (carrito == null) {
   mensaje.textContent = "Tu carrito esta vacio";
 
   let boton = document.createElement("a");
-  boton.classList.add("btn", "btn-warning", "mt-3", "mb-4");
+  boton.classList.add("btn", "btn-danger", "text-light", "mt-3", "mb-4");
   boton.textContent = "ir a la tienda";
   boton.href="../views/tienda.html"
   
