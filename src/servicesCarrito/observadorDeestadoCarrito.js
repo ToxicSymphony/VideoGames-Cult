@@ -30,7 +30,6 @@ onAuthStateChanged(auth, (user) => {
     carrito.classList.remove("d-none")
     factura.classList.remove("d-none")
     columnaBotones.classList.remove("d-none")
-    columnaBotones2.classList.remove("d-none")
     usuario.textContent = user.email
   
     

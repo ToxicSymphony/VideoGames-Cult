@@ -33,11 +33,11 @@ if (carrito == null) {
 
   let mensaje = document.createElement("h1");
   mensaje.classList.add("text-light", "fs-1", "text-center");
-  mensaje.textContent = "Tu carrito esta vacio";
+  mensaje.textContent = "Your car is empty";
 
   let boton = document.createElement("a");
   boton.classList.add("btn", "btn-danger", "text-light", "mt-3", "mb-4");
-  boton.textContent = "ir a la tienda";
+  boton.textContent = "Go back to store";
   boton.href="../views/tienda.html"
   
 
